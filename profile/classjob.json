@@ -26,7 +26,14 @@
             "selector": "div.character__job__list:nth-child(9) > div:nth-child(4)",
             "regex": "(?P<Mettle>\\S+) \\/",
             "type": {
-                "Mettle": "string"
+                "Mettle": "integer"
+            }
+        },
+        "NEXTRANK": {
+            "selector": "div.character__job__list:nth-child(9) > div:nth-child(4)",
+            "regex": "Mettle to Next Rank: (?P<NextRank>\\S+)",
+            "type": {
+                "NextRank": "integer"
             }
         },
         "NAME": {
