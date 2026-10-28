@@ -1,7 +1,7 @@
 {
     "EUREKA": {
         "EXP": {
-            "selector": "div.character__job__list:nth-child(7) > div:nth-child(4)",
+            "selector": "div.character__job__list:has(.xiv-lds-elemental-level) > .character__job__exp",
             "regex": "(?P<CurrentEXP>\\S+) \\/ (?P<MaxEXP>\\S+)",
             "type": {
                 "CurrentEXP": "integer",
@@ -9,21 +9,21 @@
             }
         },
         "LEVEL": {
-            "selector": "div.character__job__list:nth-child(7) > div:nth-child(2)",
+            "selector": "div.character__job__list:has(.xiv-lds-elemental-level) > .character__job__level",
             "type": "integer"
         },
         "NAME": {
-            "selector": "div.character__job__list:nth-child(7) > div:nth-child(3)",
+            "selector": "div.character__job__list:has(.xiv-lds-elemental-level) > .character__job__name",
             "type": "string"
         }
     },
     "BOZJA": {
         "LEVEL": {
-            "selector": "div.character__job__list:nth-child(9) > div:nth-child(2)",
+            "selector": "div.character__job__list:has(.xiv-lds-resistance-level) > .character__job__level",
             "type": "integer"
         },
         "METTLE": {
-            "selector": "div.character__job__list:nth-child(9) > div:nth-child(4)",
+            "selector": "div.character__job__list:has(.xiv-lds-resistance-level) > .character__job__exp",
             "regex": "Current Mettle: (?P<Mettle>[\\d,]+) \\/ Mettle to Next Rank: (?P<MaxMettle>[\\d,]+)",
             "type": {
                 "Mettle": "integer",
@@ -31,7 +31,60 @@
             }
         },
         "NAME": {
-            "selector": "div.character__job__list:nth-child(9) > div:nth-child(3)",
+            "selector": "div.character__job__list:has(.xiv-lds-resistance-level) > .character__job__name",
+            "type": "string"
+        }
+    },
+    "OCCULTCRESCENT": {
+        "EXP": {
+            "selector": "div.character__job__list:has(.xiv-lds-mikaduki-level) > .character__job__exp",
+            "regex": "(?P<CurrentEXP>\\S+) \\/ (?P<MaxEXP>\\S+)",
+            "type": {
+                "CurrentEXP": "integer",
+                "MaxEXP": "integer"
+            }
+        },
+        "LEVEL": {
+            "selector": "div.character__job__list:has(.xiv-lds-mikaduki-level) > .character__job__level",
+            "type": "integer"
+        },
+        "NAME": {
+            "selector": "div.character__job__list:has(.xiv-lds-mikaduki-level) > .character__job__name",
+            "type": "string"
+        }
+    },
+    "PHANTOMJOBS": {
+        "ROOT": {
+            "selector": ".character__support_job__status",
+            "multiple": true
+        },
+        "NAME": {
+            "selector": ".character__support_job__name",
+            "type": "string"
+        },
+        "LEVEL": {
+            "selector": ".character__support_job__level",
+            "regex": "Lv\\. (?P<Level>\\d+)",
+            "type": {
+                "Level": "integer"
+            }
+        },
+        "EXP": {
+            "selector": ".character__support_job__exp",
+            "regex": "(?P<CurrentEXP>\\S+) \\/ (?P<MaxEXP>\\S+)",
+            "type": {
+                "CurrentEXP": "integer",
+                "MaxEXP": "integer"
+            }
+        },
+        "ICON": {
+            "selector": ".character__support_job__icon > img",
+            "attribute": "src",
+            "type": "string"
+        },
+        "ART": {
+            "selector": ".character__support_job__art > img",
+            "attribute": "src",
             "type": "string"
         }
     },
